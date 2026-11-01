@@ -1,0 +1,47 @@
+<view class="page">
+  <view style="height:{{sb}}px"></view>
+
+  <view class="wrap">
+    <view class="brand">
+      <view class="mark">
+        <view class="cross-v"></view>
+        <view class="cross-h"></view>
+      </view>
+      <view class="title">用药提醒</view>
+      <view class="sub">慢性病用药与服药依从性追踪</view>
+    </view>
+
+    <view class="form">
+      <view class="field">
+        <text class="lab">用户名</text>
+        <input
+          class="ipt"
+          value="{{username}}"
+          placeholder="请输入用户名"
+          placeholder-class="ph"
+          bindinput="onUsername"
+        />
+      </view>
+      <view class="field">
+        <text class="lab">密码</text>
+        <input
+          class="ipt"
+          value="{{password}}"
+          password="{{true}}"
+          placeholder="请输入密码"
+          placeholder-class="ph"
+          bindinput="onPassword"
+          bindconfirm="submit"
+        />
+      </view>
+
+      <view class="err" wx:if="{{err}}">{{err}}</view>
+
+      <view class="submit {{loading ? 'off' : ''}}" hover-class="submit-hover" bindtap="submit">
+        {{loading ? '登录中…' : '登 录'}}
+      </view>
+    </view>
+
+    <view class="hint">账号密码与 Web 端一致，登录后同步用药计划与服药记录</view>
+  </view>
+</view>

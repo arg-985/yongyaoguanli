@@ -1,0 +1,161 @@
+/* 服药日历 */
+.h1-sm {
+  font-size: 46rpx;
+}
+
+.cal {
+  margin-top: 32rpx;
+  padding: 36rpx 32rpx 32rpx;
+}
+
+.cal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cal-month {
+  font-size: 32rpx;
+  font-weight: 700;
+  letter-spacing: -0.4rpx;
+}
+
+.cal-small {
+  font-size: 23rpx;
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 14rpx;
+}
+
+.arrows {
+  display: flex;
+}
+
+.arrow {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: var(--track);
+  color: var(--muted);
+  font-size: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 14rpx;
+}
+
+.arrow:active {
+  opacity: 0.7;
+}
+
+.week {
+  display: flex;
+  margin: 30rpx 0 14rpx;
+}
+
+.wk {
+  width: 14.2857%;
+  text-align: center;
+  font-size: 21rpx;
+  color: var(--muted);
+  letter-spacing: 1rpx;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: 14.2857%;
+  box-sizing: border-box;
+  padding: 3rpx;
+}
+
+.inner {
+  height: 82rpx;
+  border-radius: 22rpx;
+  background: #FBF9F4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner.muted {
+  background: transparent;
+}
+
+.inner.today {
+  background: #FFFFFF;
+  box-shadow: 0 6rpx 18rpx rgba(58, 50, 36, 0.08);
+}
+
+.inner.on {
+  background: var(--green);
+  box-shadow: 0 12rpx 32rpx rgba(60, 141, 107, 0.26);
+}
+
+.d {
+  font-size: 25rpx;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.inner.muted .d {
+  color: #D2CDC0;
+  font-weight: 500;
+}
+
+.inner.on .d {
+  color: #FFFFFF;
+}
+
+.marks {
+  display: flex;
+  height: 8rpx;
+  align-items: center;
+  margin-top: 7rpx;
+}
+
+.m {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  margin: 0 1rpx;
+}
+
+.legend {
+  display: flex;
+  margin-top: 28rpx;
+  padding-top: 26rpx;
+  border-top: 2rpx solid #F3EFE6;
+}
+
+.lg {
+  font-size: 21rpx;
+  color: var(--muted);
+  margin-right: 30rpx;
+}
+
+.lg-dot {
+  display: inline-block;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+  vertical-align: 2rpx;
+}
+
+.d1 {
+  background: #3C8D6B;
+}
+
+.d2 {
+  background: #DFA24E;
+}
+
+.d3 {
+  background: #C4695F;
+}

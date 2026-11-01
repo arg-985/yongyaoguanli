@@ -1,0 +1,122 @@
+/* 登录 */
+.wrap {
+  padding: 0 56rpx;
+}
+
+.brand {
+  margin-top: 120rpx;
+  text-align: center;
+}
+
+.mark {
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 36rpx;
+  background: linear-gradient(148deg, #3F9470 0%, #2E6E53 100%);
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 18rpx 40rpx rgba(46, 110, 83, 0.26);
+}
+
+.cross-v {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8rpx;
+  height: 48rpx;
+  background: #FFFFFF;
+  border-radius: 4rpx;
+  transform: translate(-50%, -50%);
+}
+
+.cross-h {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 48rpx;
+  height: 8rpx;
+  background: #FFFFFF;
+  border-radius: 4rpx;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  font-size: 46rpx;
+  font-weight: 800;
+  letter-spacing: -1rpx;
+  margin-top: 32rpx;
+}
+
+.sub {
+  font-size: 23rpx;
+  color: var(--muted);
+  margin-top: 14rpx;
+  letter-spacing: 1rpx;
+}
+
+.form {
+  margin-top: 76rpx;
+}
+
+.field {
+  background: #FFFFFF;
+  border-radius: 28rpx;
+  padding: 26rpx 32rpx;
+  margin-bottom: 22rpx;
+  box-shadow: 0 10rpx 32rpx rgba(58, 50, 36, 0.055);
+}
+
+.lab {
+  display: block;
+  font-size: 21rpx;
+  color: var(--muted);
+  letter-spacing: 1rpx;
+}
+
+.ipt {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+}
+
+.ph {
+  color: #C6C1B4;
+}
+
+.err {
+  font-size: 22rpx;
+  color: var(--red);
+  padding: 0 8rpx 18rpx;
+}
+
+.submit {
+  margin-top: 20rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  background: linear-gradient(148deg, #3F9470 0%, #2E6E53 100%);
+  color: #FFFFFF;
+  font-size: 29rpx;
+  font-weight: 700;
+  letter-spacing: 4rpx;
+  border-radius: 999rpx;
+  box-shadow: 0 18rpx 40rpx rgba(46, 110, 83, 0.24);
+}
+
+.submit-hover {
+  opacity: 0.88;
+}
+
+.submit.off {
+  opacity: 0.7;
+}
+
+.hint {
+  margin-top: 56rpx;
+  text-align: center;
+  font-size: 21rpx;
+  color: var(--muted);
+  line-height: 1.7;
+  padding: 0 20rpx;
+}

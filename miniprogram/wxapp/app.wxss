@@ -1,0 +1,269 @@
+page {
+  --paper: #F6F3EC;
+  --card: #FFFFFF;
+  --green: #3C8D6B;
+  --green-deep: #2E6E53;
+  --green-soft: #E4F0E9;
+  --amber: #DFA24E;
+  --amber-soft: #FAEFDD;
+  --red: #C4695F;
+  --red-soft: #F6E6E3;
+  --blue: #5A8FCB;
+  --blue-soft: #E4EDF7;
+  --ink: #262521;
+  --muted: #8B8879;
+  --line: #EDE8DC;
+  --track: #F0EDE4;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  font-size: 28rpx;
+  -webkit-font-smoothing: antialiased;
+}
+
+.body {
+  padding: 32rpx 44rpx 48rpx;
+}
+
+/* ---------- 页头 ---------- */
+.greet {
+  font-size: 25rpx;
+  color: var(--muted);
+  letter-spacing: 0.6rpx;
+}
+
+.h1 {
+  font-size: 50rpx;
+  font-weight: 700;
+  letter-spacing: -1.2rpx;
+  margin-top: 14rpx;
+  line-height: 1.3;
+}
+
+.h1 .em {
+  color: var(--green);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: var(--green-soft);
+  color: var(--green-deep);
+  font-size: 28rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rpx;
+  box-shadow: 0 8rpx 24rpx rgba(60, 141, 107, 0.14);
+}
+
+/* ---------- 卡片 ---------- */
+.card {
+  background: var(--card);
+  border-radius: 40rpx;
+  box-shadow: 0 20rpx 56rpx rgba(58, 50, 36, 0.07);
+}
+
+/* ---------- 区块标题 ---------- */
+.sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 40rpx 6rpx 22rpx;
+}
+
+.sec .t {
+  font-size: 29rpx;
+  font-weight: 700;
+  letter-spacing: -0.4rpx;
+}
+
+.sec .more {
+  font-size: 23rpx;
+  color: var(--muted);
+}
+
+/* ---------- 用药条目 ---------- */
+.dose {
+  display: flex;
+  align-items: center;
+  background: var(--card);
+  border-radius: 32rpx;
+  padding: 26rpx 28rpx 26rpx 26rpx;
+  margin-bottom: 18rpx;
+  box-shadow: 0 10rpx 32rpx rgba(58, 50, 36, 0.055);
+  border-left: 6rpx solid #DCD7C9;
+}
+
+.dose.ok {
+  border-left-color: var(--green);
+}
+
+.dose.late {
+  border-left-color: var(--amber);
+}
+
+.dose.miss {
+  border-left-color: var(--red);
+}
+
+.dose .time {
+  width: 96rpx;
+  flex-shrink: 0;
+  font-size: 30rpx;
+  font-weight: 700;
+  letter-spacing: -1rpx;
+}
+
+.dose .time .small {
+  display: block;
+  font-size: 19rpx;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 2rpx;
+  margin-top: 6rpx;
+}
+
+.dose .sep {
+  width: 2rpx;
+  height: 64rpx;
+  background: var(--line);
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.dose .info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dose .name {
+  font-size: 27rpx;
+  font-weight: 600;
+  letter-spacing: -0.3rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dose .meta {
+  font-size: 21rpx;
+  color: var(--muted);
+  margin-top: 9rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag {
+  font-size: 19rpx;
+  padding: 3rpx 12rpx;
+  border-radius: 8rpx;
+  margin-left: 10rpx;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-weight: 600;
+  vertical-align: 2rpx;
+}
+
+.done {
+  font-size: 23rpx;
+  font-weight: 600;
+  color: var(--green);
+  flex-shrink: 0;
+  margin-left: 12rpx;
+}
+
+.done.late {
+  color: var(--amber);
+}
+
+.done.miss {
+  color: var(--red);
+}
+
+.done.skip {
+  color: var(--muted);
+}
+
+.btn {
+  font-size: 23rpx;
+  font-weight: 700;
+  color: #fff;
+  background: var(--green);
+  border-radius: 999rpx;
+  padding: 16rpx 30rpx;
+  flex-shrink: 0;
+  margin-left: 12rpx;
+  letter-spacing: 1rpx;
+  box-shadow: 0 10rpx 28rpx rgba(60, 141, 107, 0.28);
+}
+
+.btn-hover {
+  opacity: 0.82;
+}
+
+/* ---------- 提示条 ---------- */
+.tip {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 28rpx;
+  padding: 26rpx 28rpx;
+  background: var(--amber-soft);
+  border-radius: 28rpx;
+  font-size: 23rpx;
+  line-height: 1.65;
+  color: #7C5A22;
+}
+
+.tip .dot-ico {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 2rpx solid #C08A3A;
+  flex-shrink: 0;
+  margin: 2rpx 18rpx 0 0;
+  position: relative;
+}
+
+.tip .dot-ico::after {
+  content: "";
+  position: absolute;
+  left: 12rpx;
+  top: 6rpx;
+  width: 2rpx;
+  height: 10rpx;
+  background: #C08A3A;
+}
+
+.tip .txt {
+  flex: 1;
+}
+
+.tip .b {
+  font-weight: 700;
+}
+
+/* ---------- 占位 ---------- */
+.empty {
+  text-align: center;
+  font-size: 24rpx;
+  color: var(--muted);
+  padding: 80rpx 0;
+}
+
+.loading {
+  text-align: center;
+  font-size: 23rpx;
+  color: var(--muted);
+  padding: 60rpx 0;
+}

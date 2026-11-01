@@ -1,0 +1,56 @@
+<view class="page">
+  <view style="height:{{sb}}px"></view>
+
+  <view class="body">
+    <view class="greet">服药记录</view>
+    <view class="h1 h1-sm">服药日历</view>
+
+    <view class="card cal">
+      <view class="cal-head">
+        <view class="cal-month">{{monthLabel}}<text class="cal-small">共 {{summary.total}} 次</text></view>
+        <view class="arrows">
+          <view class="arrow" bindtap="prevMonth">‹</view>
+          <view class="arrow" bindtap="nextMonth">›</view>
+        </view>
+      </view>
+
+      <view class="week">
+        <text wx:for="{{weekDays}}" wx:key="*this" class="wk">{{item}}</text>
+      </view>
+
+      <view class="grid">
+        <view wx:for="{{cells}}" wx:key="key" class="cell" data-date="{{item.date}}" bindtap="onPick">
+          <view class="inner {{item.cls}}">
+            <text class="d">{{item.day}}</text>
+            <view class="marks">
+              <view wx:for="{{item.marks}}" wx:for-item="m" wx:key="k" class="m" style="background:{{m.c}}"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="legend">
+        <text class="lg"><text class="lg-dot d1"></text>按时</text>
+        <text class="lg"><text class="lg-dot d2"></text>迟服</text>
+        <text class="lg"><text class="lg-dot d3"></text>漏服</text>
+      </view>
+    </view>
+
+    <view class="sec">
+      <text class="t">{{selectedLabel}}</text>
+      <text class="more">{{dayRecords.length}} 条记录</text>
+    </view>
+
+    <view wx:for="{{dayRecords}}" wx:key="id" class="dose {{item.cls}}">
+      <view class="time">{{item.time}}</view>
+      <view class="sep"></view>
+      <view class="info">
+        <view class="name">{{item.name}}</view>
+        <view class="meta">{{item.meta}}</view>
+      </view>
+      <view class="done {{item.cls}}">{{item.text}}</view>
+    </view>
+
+    <view class="empty" wx:if="{{!loading && !dayRecords.length}}">这一天没有服药记录</view>
+  </view>
+</view>

@@ -1,0 +1,71 @@
+<view class="page">
+  <view style="height:{{sb}}px"></view>
+
+  <view class="body">
+    <view class="greet">个人中心</view>
+    <view class="h1 h1-sm">我的</view>
+
+    <view class="card me">
+      <view class="ava">{{avatarText}}</view>
+      <view class="me-info">
+        <view class="name">{{name}}</view>
+        <view class="role">{{roleLabel}}</view>
+      </view>
+    </view>
+
+    <view class="nums">
+      <view class="num-item">
+        <text class="n">{{planCount}}</text>
+        <text class="s">用药计划</text>
+      </view>
+      <view class="num-item">
+        <text class="n">{{recordCount}}</text>
+        <text class="s">服药记录</text>
+      </view>
+      <view class="num-item">
+        <text class="n">{{rate}}%</text>
+        <text class="s">依从率</text>
+      </view>
+    </view>
+
+    <view class="menu">
+      <view class="row" hover-class="row-hover" bindtap="onFamily">
+        <view class="l">
+          <view class="ico" style="background:#E4F0E9"><image class="ico-img" src="/assets/ico-family.png" /></view>
+          <text>我的家属</text>
+        </view>
+        <text class="arr">›</text>
+      </view>
+      <view class="row" hover-class="row-hover" bindtap="onPlans">
+        <view class="l">
+          <view class="ico" style="background:#E4EDF7"><image class="ico-img" src="/assets/ico-pill.png" /></view>
+          <text>用药计划</text>
+        </view>
+        <text class="arr">›</text>
+      </view>
+      <view class="row" hover-class="row-hover" bindtap="onRemind">
+        <view class="l">
+          <view class="ico" style="background:#FAEFDD"><image class="ico-img" src="/assets/ico-bell.png" /></view>
+          <text>提醒设置</text>
+        </view>
+        <text class="arr">›</text>
+      </view>
+      <view class="row" hover-class="row-hover" bindtap="onAbout">
+        <view class="l">
+          <view class="ico" style="background:#F0EDE4"><image class="ico-img" src="/assets/ico-info.png" /></view>
+          <text>关于系统</text>
+        </view>
+        <text class="arr">›</text>
+      </view>
+      <view class="row" hover-class="row-hover" bindtap="onLogout">
+        <view class="l">
+          <view class="ico" style="background:#F6E6E3"><image class="ico-img" src="/assets/ico-logout.png" /></view>
+          <text>退出登录</text>
+        </view>
+        <text class="arr">›</text>
+      </view>
+    </view>
+
+    <view class="foot-note">用药提醒 · 依从性追踪　v1.0</view>
+  </view>
+</view>

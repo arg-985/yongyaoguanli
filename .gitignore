@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+*.log
+.env
+.env.*
+backend/staticfiles/
+backend/media/
+backend/backups/
+frontend/.env.local

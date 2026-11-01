@@ -1,0 +1,7 @@
+﻿py : Watching for file changes with StatReloader
+所在位置 行:15 字符: 1501
++ ... Drive\文档\Trae-CN\temp_20261023_02\backend'; py server.py 2>&1 | Tee-O ...
++                                                 ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Watching for fi...th StatReloader:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

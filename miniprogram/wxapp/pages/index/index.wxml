@@ -1,0 +1,60 @@
+<view class="page">
+  <view style="height:{{sb}}px"></view>
+
+  <view class="body">
+    <view class="head">
+      <view>
+        <view class="greet">{{greet}}，{{userName}}</view>
+        <view class="h1">今天有 <text class="em">{{total}}</text> 次要服药</view>
+      </view>
+      <view class="avatar">{{avatarText}}</view>
+    </view>
+
+    <!-- 今日进度 -->
+    <view class="hero">
+      <view class="hero-row">
+        <view>
+          <view class="hero-lbl">TODAY · {{dateLabel}}</view>
+          <view class="hero-num">{{done}}<text class="hero-small">/ {{total}} 次</text></view>
+        </view>
+        <view class="hero-badge">已服 {{percent}}%</view>
+      </view>
+      <view class="bar"><view class="fill" style="width:{{percent}}%"></view></view>
+      <view class="hero-next" wx:if="{{next}}">
+        <text>下一次</text>
+        <text class="b">{{next.time}} {{next.name}}</text>
+        <text class="c">· 还有 {{next.left}}</text>
+      </view>
+      <view class="hero-next" wx:else>
+        <text>今天的用药已全部完成</text>
+      </view>
+    </view>
+
+    <view class="sec">
+      <text class="t">今日用药</text>
+      <text class="more">共 {{total}} 次</text>
+    </view>
+
+    <view wx:for="{{items}}" wx:key="id" class="dose {{item.cls}}">
+      <view class="time">{{item.time}}<text class="small">{{item.period}}</text></view>
+      <view class="sep"></view>
+      <view class="info">
+        <view class="name">{{item.name}}<text class="tag" wx:if="{{item.tag}}">{{item.tag}}</text></view>
+        <view class="meta">{{item.meta}}</view>
+      </view>
+      <view wx:if="{{item.state === 'done'}}" class="done">已服</view>
+      <view wx:elif="{{item.state === 'late'}}" class="done late">{{item.text}}</view>
+      <view wx:elif="{{item.state === 'miss'}}" class="done miss">漏服</view>
+      <view wx:elif="{{item.state === 'skip'}}" class="done skip">已跳过</view>
+      <view wx:else class="btn" hover-class="btn-hover" data-id="{{item.id}}" bindtap="onTake">打卡</view>
+    </view>
+
+    <view class="loading" wx:if="{{loading && !items.length}}">正在加载今日提醒…</view>
+    <view class="empty" wx:if="{{!loading && !items.length}}">今天没有用药计划</view>
+
+    <view class="tip" wx:if="{{!loading && items.length}}">
+      <view class="dot-ico"></view>
+      <view class="txt">{{tip}}</view>
+    </view>
+  </view>
+</view>

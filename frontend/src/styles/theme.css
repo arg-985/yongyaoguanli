@@ -1,0 +1,267 @@
+/* ============ 糖果手账风设计令牌 ============ */
+:root {
+  --cream-bg: #FFF8E7;
+  --cream-deep: #FFEFC9;
+  --cream-line: #FFE2B8;
+  --ink: #4A3B32;
+  --ink-soft: #8A7466;
+  --ink-faint: #B7A797;
+  --pink: #FF7FA0;
+  --pink-deep: #E85C80;
+  --pink-soft: #FFE4EB;
+  --orange: #FFA94D;
+  --orange-deep: #E8862B;
+  --yellow: #FFD24A;
+  --yellow-deep: #E9B520;
+  --mint: #5FC9A5;
+  --mint-deep: #3FA684;
+  --mint-soft: #DFF6EC;
+  --sky: #6FC4EF;
+  --sky-deep: #3F9FCB;
+  --sky-soft: #E1F2FC;
+  --purple: #B49BF0;
+  --purple-soft: #EFE6FF;
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --shadow-soft: 0 10px 26px rgba(201, 155, 92, 0.16);
+  --shadow-pop: 0 6px 0 rgba(214, 165, 96, 0.28);
+}
+
+body {
+  background-color: var(--cream-bg) !important;
+  background-image:
+    radial-gradient(circle at 12% 8%, #FFF1C9 0 18%, transparent 19%),
+    radial-gradient(circle at 88% 4%, #FFE6EE 0 14%, transparent 15%),
+    radial-gradient(circle at 78% 82%, #E6F7FF 0 16%, transparent 17%);
+  background-attachment: fixed;
+  color: var(--ink);
+}
+
+/* ============ 通用糖果卡 ============ */
+.candy-card {
+  background: #FFFDF7;
+  border: 2px solid var(--cream-line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 22px 24px;
+  position: relative;
+}
+
+.candy-card.tilt-pink { border-color: #FFD3DF; }
+.candy-card.tilt-mint { border-color: #C9EDDF; }
+.candy-card.tilt-sky { border-color: #CDE9F7; }
+.candy-card.tilt-yellow { border-color: #FFE6A8; }
+
+.page-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 8px 6px 18px;
+  flex-wrap: wrap;
+}
+
+.page-hero .hero-text .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--pink-deep);
+  background: var(--pink-soft);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.page-hero .hero-text h1 {
+  margin: 10px 0 6px;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+}
+
+.page-hero .hero-text h1 em {
+  font-style: normal;
+  background: linear-gradient(180deg, transparent 62%, #FFE074 62%);
+  padding: 0 4px;
+}
+
+.page-hero .hero-text p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* ============ 果冻方块图标 ============ */
+.jelly {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 22px;
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.12), 0 6px 14px rgba(0, 0, 0, 0.08);
+  flex: none;
+}
+.jelly.pink { background: linear-gradient(160deg, #FF9DB4, var(--pink-deep)); }
+.jelly.orange { background: linear-gradient(160deg, #FFBE7A, var(--orange-deep)); }
+.jelly.yellow { background: linear-gradient(160deg, #FFE07A, var(--yellow-deep)); }
+.jelly.mint { background: linear-gradient(160deg, #8FE3C4, var(--mint-deep)); }
+.jelly.sky { background: linear-gradient(160deg, #9EDBF6, var(--sky-deep)); }
+.jelly.purple { background: linear-gradient(160deg, #CFBCFA, #8A6AD0); }
+
+/* ============ 症状小方块（参考图中的 CLICK 卡片） ============ */
+.symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: 12px;
+}
+
+.symptom-tile {
+  position: relative;
+  border: 2px solid #FFE6A8;
+  border-radius: 18px;
+  background: #FFFCF0;
+  padding: 14px 8px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  box-shadow: 0 4px 0 #FFE3A1;
+  user-select: none;
+}
+.symptom-tile:hover { transform: translateY(-3px); box-shadow: 0 7px 0 #FFE3A1; }
+.symptom-tile.active {
+  border-color: var(--pink);
+  background: #FFF3F6;
+  box-shadow: 0 4px 0 var(--pink-deep);
+}
+.symptom-tile .emoji { font-size: 26px; line-height: 1.2; }
+.symptom-tile .name { margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--ink); }
+.symptom-tile .sticker {
+  position: absolute;
+  right: 6px;
+  bottom: 5px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  color: #fff;
+  background: var(--sky);
+  border-radius: 6px;
+  padding: 1px 5px;
+  transform: rotate(-4deg);
+}
+
+/* ============ 统计瓷砖 ============ */
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.stat-tile {
+  border-radius: 22px;
+  padding: 18px 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 -8px 0 rgba(0, 0, 0, 0.10), 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+.stat-tile::after {
+  content: '';
+  position: absolute;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  right: -18px;
+  top: -22px;
+  background: rgba(255, 255, 255, 0.22);
+}
+.stat-tile.pink { background: linear-gradient(150deg, #FF9CB4, #F0698C); }
+.stat-tile.orange { background: linear-gradient(150deg, #FFC078, #F0913B); }
+.stat-tile.mint { background: linear-gradient(150deg, #83DFC0, #43B08D); }
+.stat-tile.sky { background: linear-gradient(150deg, #8FD4F5, #4BA8D6); }
+.stat-tile .num { font-size: 32px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
+.stat-tile .label { font-size: 12px; font-weight: 600; opacity: .92; margin-top: 4px; }
+.stat-tile .icon { position: absolute; right: 16px; bottom: 12px; font-size: 26px; opacity: .55; }
+
+/* ============ 胶囊标签 ============ */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 3px 11px;
+}
+.pill.pink { background: var(--pink-soft); color: var(--pink-deep); }
+.pill.mint { background: var(--mint-soft); color: var(--mint-deep); }
+.pill.sky { background: var(--sky-soft); color: var(--sky-deep); }
+.pill.yellow { background: #FFF3CC; color: #A97D0A; }
+.pill.purple { background: var(--purple-soft); color: #7A5CC0; }
+
+/* ============ Element Plus 糖果化（仅基础观感） ============ */
+.el-card {
+  --el-card-border-color: var(--cream-line);
+  border-radius: var(--radius-lg) !important;
+  background: #FFFDF7 !important;
+  box-shadow: var(--shadow-soft) !important;
+  border-width: 2px !important;
+}
+.el-card__header { border-bottom: 1px dashed var(--cream-line) !important; padding: 16px 22px !important; }
+.el-card__body { padding: 22px !important; }
+
+.el-button {
+  --el-border-radius-base: 999px;
+  border-radius: 999px !important;
+  font-weight: 700;
+}
+.el-button--primary {
+  --el-button-bg-color: var(--pink);
+  --el-button-border-color: var(--pink-deep);
+  --el-button-hover-bg-color: #FF94AE;
+  --el-button-hover-border-color: var(--pink-deep);
+  --el-button-active-bg-color: var(--pink-deep);
+  box-shadow: 0 4px 0 rgba(232, 92, 128, 0.35);
+}
+.el-button--primary:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(232, 92, 128, 0.35); }
+
+.el-input__wrapper,
+.el-textarea__inner,
+.el-select__wrapper {
+  border-radius: 14px !important;
+  box-shadow: 0 0 0 2px #FFEDCB inset !important;
+  background: #FFFCF2 !important;
+}
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused,
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 2px var(--pink) inset !important;
+}
+
+.el-table {
+  --el-table-border-color: #FFEBD0;
+  --el-table-header-bg-color: #FFF6E0;
+  --el-table-tr-bg-color: #FFFDF7;
+  --el-table-row-hover-bg-color: #FFF6E9;
+  border-radius: 16px;
+  font-size: 13px;
+}
+.el-table th.el-table__cell { background: #FFF6E0 !important; color: var(--ink) !important; font-weight: 700; }
+
+.el-tabs__item { font-weight: 700; color: var(--ink-soft); }
+.el-tabs__item.is-active { color: var(--pink-deep); }
+.el-tabs__active-bar { background-color: var(--pink) !important; height: 4px !important; border-radius: 4px; }
+
+.el-dialog { border-radius: 24px !important; background: #FFFDF7 !important; }
+.el-dialog__title { font-weight: 800; color: var(--ink); }
+
+.el-tag { border-radius: 999px !important; font-weight: 700; }
+
+.el-empty__description p { color: var(--ink-faint); }
+
+/* 滚动条也温柔一点 */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #FFDDA8; border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-track { background: transparent; }

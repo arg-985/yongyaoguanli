@@ -1,0 +1,78 @@
+/* 今日用药 */
+.hero {
+  margin-top: 36rpx;
+  border-radius: 44rpx;
+  padding: 40rpx 40rpx 34rpx;
+  background: linear-gradient(148deg, #3F9470 0%, #2E6E53 100%);
+  color: #FFFFFF;
+  box-shadow: 0 28rpx 60rpx rgba(46, 110, 83, 0.24);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hero-lbl {
+  font-size: 22rpx;
+  letter-spacing: 2.6rpx;
+  opacity: 0.78;
+}
+
+.hero-num {
+  font-size: 68rpx;
+  font-weight: 800;
+  letter-spacing: -2rpx;
+  line-height: 1.15;
+  margin-top: 12rpx;
+}
+
+.hero-small {
+  font-size: 30rpx;
+  font-weight: 600;
+  opacity: 0.7;
+  margin-left: 6rpx;
+  letter-spacing: 0;
+}
+
+.hero-badge {
+  font-size: 21rpx;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999rpx;
+  padding: 10rpx 20rpx;
+}
+
+.bar {
+  height: 12rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.22);
+  margin-top: 28rpx;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #FFFFFF;
+  opacity: 0.92;
+  border-radius: 999rpx;
+  transition: width 0.4s;
+}
+
+.hero-next {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 23rpx;
+  opacity: 0.86;
+  margin-top: 22rpx;
+}
+
+.hero-next .b {
+  font-weight: 700;
+  opacity: 1;
+  margin: 0 8rpx;
+}

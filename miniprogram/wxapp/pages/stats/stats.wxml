@@ -1,0 +1,63 @@
+<view class="page">
+  <view style="height:{{sb}}px"></view>
+
+  <view class="body">
+    <view class="greet">近 7 天</view>
+    <view class="h1 h1-sm">服药依从率</view>
+
+    <view class="card big" wx:if="{{!empty}}">
+      <view class="lbl">AVERAGE ADHERENCE</view>
+      <view class="val-row">
+        <text class="val">{{rate}}</text>
+        <text class="pct">%</text>
+        <text class="delta {{deltaCls}}" wx:if="{{deltaText}}">{{deltaText}}</text>
+      </view>
+
+      <view class="chart">
+        <view wx:for="{{bars}}" wx:key="k" class="barbox">
+          <view class="b {{item.hi ? 'hi' : ''}}" style="height:{{item.h}}%"></view>
+          <text class="blbl">{{item.label}}</text>
+        </view>
+      </view>
+
+      <view class="bs-row">
+        <view class="bs-item">
+          <text class="n g">{{onTime}}</text>
+          <text class="s">按时</text>
+        </view>
+        <view class="bs-item">
+          <text class="n a">{{late}}</text>
+          <text class="s">迟服</text>
+        </view>
+        <view class="bs-item">
+          <text class="n r">{{missed}}</text>
+          <text class="s">漏服</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="sec">
+      <text class="t">漏服分布</text>
+      <text class="more">按星期 · 近 14 天</text>
+    </view>
+
+    <view class="card dist" wx:if="{{dist.length}}">
+      <view wx:for="{{dist}}" wx:key="k" class="split">
+        <text class="w">{{item.label}}</text>
+        <view class="track">
+          <view class="fill" style="width:{{item.pct}}%"></view>
+        </view>
+        <text class="pct-n">{{item.pct}}%</text>
+      </view>
+    </view>
+    <view class="card dist-empty" wx:else>近 14 天没有漏服记录</view>
+
+    <view class="tip" wx:if="{{!empty}}">
+      <view class="dot-ico"></view>
+      <view class="txt">{{tip}}</view>
+    </view>
+
+    <view class="loading" wx:if="{{loading}}">正在统计…</view>
+    <view class="empty" wx:if="{{empty}}">还没有可统计的服药记录</view>
+  </view>
+</view>
