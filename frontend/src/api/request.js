@@ -3,7 +3,7 @@ import { ElMessage } from 'element-plus'
 import router from '../router'
 
 const request = axios.create({
-  baseURL: '',
+  baseURL: 'https://arg1234.pythonanywhere.com/api',
   timeout: 15000
 })
 
