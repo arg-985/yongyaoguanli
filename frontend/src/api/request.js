@@ -2,10 +2,12 @@ import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import router from '../router'
 
-// 默认走相对路径：开发时由 Vite 代理到 http://127.0.0.1:8001，
-// 生产时由 vercel.json 的 /api 重写转发到后端，无需写死域名。
-// 如需直连独立后端，可在 .env 中配置 VITE_API_BASE_URL（例如 https://xxx.onrender.com）。
-const baseURL = import.meta.env.VITE_API_BASE_URL || ''
+// 开发环境走相对路径（Vite 代理到本地 8001），生产环境直连 PythonAnywhere 后端。
+// 也可在 Vercel / .env.production 中覆盖：VITE_API_BASE_URL=https://arg1234.pythonanywhere.com/api
+const API_BASE_PROD = 'https://arg1234.pythonanywhere.com/api'
+const API_BASE_DEV = ''
+const baseURL = import.meta.env.VITE_API_BASE_URL
+  || (import.meta.env.PROD ? API_BASE_PROD : API_BASE_DEV)
 
 const request = axios.create({
   baseURL,
