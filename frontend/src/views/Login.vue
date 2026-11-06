@@ -63,6 +63,11 @@
                   <template #prefix><span class="input-emoji">🔒</span></template>
                 </el-input>
               </el-form-item>
+              <el-form-item prop="password2">
+                <el-input v-model="registerForm.password2" type="password" placeholder="确认密码" size="large" show-password>
+                  <template #prefix><span class="input-emoji">🔐</span></template>
+                </el-input>
+              </el-form-item>
               <el-form-item prop="role">
                 <div class="role-fixed">
                   🐶 注册身份：<b>患者</b>
@@ -70,7 +75,7 @@
                 </div>
               </el-form-item>
               <el-form-item prop="phone">
-                <el-input v-model="registerForm.phone" placeholder="手机号（可选，用于找回密码）" size="large">
+                <el-input v-model="registerForm.phone" placeholder="手机号（11 位，用于找回密码）" size="large">
                   <template #prefix><span class="input-emoji">📱</span></template>
                 </el-input>
               </el-form-item>
@@ -139,7 +144,7 @@ const codeCountdown = ref(0)
 const devCode = ref('')
 
 const loginForm = reactive({ username: '', password: '' })
-const registerForm = reactive({ username: '', password: '', role: 'patient', phone: '' })
+const registerForm = reactive({ username: '', password: '', password2: '', role: 'patient', phone: '' })
 const resetForm = reactive({ phone: '', code: '', new_password: '' })
 
 const loginRules = {
@@ -152,7 +157,21 @@ const registerRules = {
     { required: true, message: '请输入密码', trigger: 'blur' },
     { min: 8, message: '密码至少 8 位', trigger: 'blur' },
   ],
+  password2: [
+    { required: true, message: '请再次输入密码', trigger: 'blur' },
+    {
+      validator: (rule, value, callback) => {
+        if (value && value !== registerForm.password) callback(new Error('两次输入的密码不一致'))
+        else callback()
+      },
+      trigger: 'blur',
+    },
+  ],
   role: [{ required: true, message: '请选择身份', trigger: 'change' }],
+  phone: [
+    { required: true, message: '请输入手机号', trigger: 'blur' },
+    { pattern: /^1\d{10}$/, message: '手机号应为 11 位数字', trigger: 'blur' },
+  ],
 }
 const resetRules = {
   phone: [
