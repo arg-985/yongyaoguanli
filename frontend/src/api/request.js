@@ -3,8 +3,9 @@ import { ElMessage } from 'element-plus'
 import router from '../router'
 
 // 开发环境走相对路径（Vite 代理到本地 8001），生产环境直连 PythonAnywhere 后端。
-// 也可在 Vercel / .env.production 中覆盖：VITE_API_BASE_URL=https://arg1234.pythonanywhere.com/api
-const API_BASE_PROD = 'https://arg1234.pythonanywhere.com/api'
+// 注意：baseURL 末尾不要加 /api，modules.js 里的路径本身带 /api 前缀。
+// 也可在 Vercel / .env.production 中覆盖：VITE_API_BASE_URL=https://arg1234.pythonanywhere.com
+const API_BASE_PROD = 'https://arg1234.pythonanywhere.com'
 const API_BASE_DEV = ''
 const baseURL = import.meta.env.VITE_API_BASE_URL
   || (import.meta.env.PROD ? API_BASE_PROD : API_BASE_DEV)
